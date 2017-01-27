@@ -19,24 +19,28 @@ public class Menu {
                 break;
 
             case 2:
-                for(int x=10; x>0; x--) {
-                    System.out.println(x);
-                    try {
-                        Thread.sleep(1000);
-                    } catch(InterruptedException ex) {
-                        Thread.currentThread().interrupt();
+                if(player.health <= 200) {
+                    for (int x = 10; x > 0; x--) {
+                        System.out.println(x);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Thread.currentThread().interrupt();
+                        }
                     }
+                    player.heal(10);
                 }
-                player.health += 10;
                 menu(player);
                 break;
 
             case 3:
                 RAWHandler RandW = new RAWHandler("player.txt");
                 RandW.add(player.name, Integer.toString(player.health));
+                menu(player);
                 break;
 
             case 4:
+                System.out.println("Goodbye");
                 break;
         }
     }
