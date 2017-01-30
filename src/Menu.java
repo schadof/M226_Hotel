@@ -15,7 +15,8 @@ public class Menu {
                 break;
 
             case 1:
-
+                Dungeon dungeon = new Dungeon(player);
+                dungeon.menu();
                 break;
 
             case 2:
