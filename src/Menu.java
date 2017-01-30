@@ -12,6 +12,7 @@ public class Menu {
         switch(in.nextInt()){
             default:
                 System.out.println("Invalid action");
+                menu(player);
                 break;
 
             case 1:

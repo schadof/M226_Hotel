@@ -1,6 +1,6 @@
 public class Entity {
     String name;
-    int health;
+    int health = 100;
 
     public void heal(int amount){
         health += amount;
@@ -9,4 +9,5 @@ public class Entity {
     public void damage(int amount){
         health -= amount;
     }
+
 }

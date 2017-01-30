@@ -12,8 +12,6 @@ public class Main {
         if(RandW.read().containsKey(player.name)){
             System.out.println("Restore Savegame");
             player.health = Integer.parseInt(RandW.hm.get(player.name));
-        } else {
-            player.health = 100;
         }
         System.out.println("Hello brave " + player.name);
         menu.menu(player);
