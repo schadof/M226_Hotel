@@ -13,6 +13,7 @@ public class Dungeon {
 
     public void menu(){
         System.out.println("------------------------------");
+        System.out.println("Welcome to the dungeon");
         System.out.println("What do you want to do, " + player.name + "?");
         System.out.println("Your Health: " + player.health);
         System.out.println("Enemy Health: " + enemy.health);
