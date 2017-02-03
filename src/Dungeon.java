@@ -52,6 +52,32 @@ public class Dungeon {
                     System.out.println("You damaged the enemy for " + damage + " damage");
                     kill();
                 }
+                //enemy attack
+                //dodge/block chance
+                if(Math.random() * 100 <= 30){
+                    //counter chance
+                    if(Math.random() * 100 <= 40){
+                        int damage = (int)(Math.random() * 5);
+                        enemy.damage(damage);
+                        System.out.println("------------------------------");
+                        System.out.println("You countered for " + damage + " damage");
+                        kill();
+                        menu();
+                    }
+                    //damage reduction
+                    int damage = (int)(Math.random() * 5);
+                    player.damage(damage);
+                    System.out.println("------------------------------");
+                    System.out.println("You blocked and only took " + damage + " damage");
+                    kill();
+                } else {
+                    //normal damage
+                    int damage = (int)(Math.random() * 10);
+                    player.damage(damage);
+                    System.out.println("------------------------------");
+                    System.out.println("The enemy damaged you for " + damage + " damage");
+                    kill();
+                }
                 menu();
                 break;
 
