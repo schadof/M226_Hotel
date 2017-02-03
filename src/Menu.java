@@ -12,18 +12,18 @@ public class Menu {
         System.out.println("3. Save");
         System.out.println("4. Exit");
         System.out.println("------------------------------");
-        switch(in.nextInt()){
+        switch(in.nextLine()){
             default:
                 System.out.println("------------------------------");
                 System.out.println("Invalid action");
                 menu(player);
                 break;
 
-            case 1:
+            case "1":
                 dungeon(player);
                 break;
 
-            case 2:
+            case "2":
                 //if player has 200 or more hp they wont heal
                 if(player.health <= 200) {
                     for (int x = 10; x > 0; x--) {
@@ -39,14 +39,14 @@ public class Menu {
                 menu(player);
                 break;
 
-            case 3:
+            case "3":
                 //saving player
                 RAWHandler RandW = new RAWHandler("player.txt");
                 RandW.add(player.name, Integer.toString(player.health));
                 menu(player);
                 break;
 
-            case 4:
+            case "4":
                 //exit
                 System.out.println("------------------------------");
                 System.out.println("Goodbye");
