@@ -15,6 +15,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         System.out.println("Name of your adventurer");
         player.name = in.nextLine();
+        //restore savegame if user exists
         if(RandW.read().containsKey(player.name)){
             System.out.println("------------------------------");
             System.out.println("Restore Savegame");

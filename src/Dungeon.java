@@ -27,7 +27,9 @@ public class Dungeon {
                 break;
 
             case "1":
+                //dodge/block chance
                 if(Math.random() * 100 <= 30){
+                    //counter chance
                     if(Math.random() * 100 <= 40){
                         int damage = (int)(Math.random() * 5);
                         player.damage(damage);
@@ -36,12 +38,14 @@ public class Dungeon {
                         kill();
                         menu();
                     }
+                    //damage reduction
                     int damage = (int)(Math.random() * 5);
                     enemy.damage(damage);
                     System.out.println("------------------------------");
                     System.out.println("The enemy blocked and only took " + damage + " damage");
                     kill();
                 } else {
+                    //normal damage
                     int damage = (int)(Math.random() * 20);
                     enemy.damage(damage);
                     System.out.println("------------------------------");
@@ -52,7 +56,9 @@ public class Dungeon {
                 break;
 
             case "2":
+                //dodge/block chance
                 if(Math.random() * 100 <= 60){
+                    //counter chance
                     if(Math.random() * 100 <= 50){
                         int damage = (int)(Math.random() * 5);
                         enemy.damage(damage);
@@ -60,6 +66,7 @@ public class Dungeon {
                         System.out.println("You countered for " + damage + " damage");
                         kill();
                     } else {
+                        //normal damage
                         int damage = (int) (Math.random() * 5);
                         player.damage(damage);
                         System.out.println("------------------------------");
@@ -71,11 +78,13 @@ public class Dungeon {
                 break;
 
             case "3":
+                //flee chance
                 if(Math.random() * 100 <= 20){
                     System.out.println("------------------------------");
                     System.out.println("You fled");
                     menu.menu(player);
                 } else {
+                    //damage on failed flee
                     int damage =  (int)(Math.random() * 10);
                     player.damage(damage);
                     System.out.println("------------------------------");
@@ -90,6 +99,7 @@ public class Dungeon {
     }
 
     public void kill(){
+        //checking if enemy is alive
         if(enemy.health <= 0){
             System.out.println("------------------------------");
             System.out.println("You killed the enemy");
@@ -111,6 +121,7 @@ public class Dungeon {
                     menu.menu(player);
                     break;
             }
+            //checking if player is alive
         } else if(player.health <= 0){
             System.out.println("You died");
             Main main = new Main();

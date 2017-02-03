@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
     public void menu(Player player) {
         Scanner in = new Scanner(System.in);
+        //greetings
         System.out.println("------------------------------");
         System.out.println("What do you want to do, " + player.name + "?");
         System.out.println("Health: " + player.health);
@@ -23,6 +24,7 @@ public class Menu {
                 break;
 
             case 2:
+                //if player has 200 or more hp they wont heal
                 if(player.health <= 200) {
                     for (int x = 10; x > 0; x--) {
                         System.out.println(x);
@@ -38,12 +40,14 @@ public class Menu {
                 break;
 
             case 3:
+                //saving player
                 RAWHandler RandW = new RAWHandler("player.txt");
                 RandW.add(player.name, Integer.toString(player.health));
                 menu(player);
                 break;
 
             case 4:
+                //exit
                 System.out.println("------------------------------");
                 System.out.println("Goodbye");
                 break;
